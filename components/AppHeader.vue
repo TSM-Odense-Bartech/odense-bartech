@@ -21,7 +21,7 @@ const toggleMenu = () => {
         </h2>
         <div class="hidden md:flex items-center space-x-6">
           <NuxtLink
-            v-for="item in ['vores-arbejde', 'om', 'kontakt']"
+            v-for="item in ['om', 'kontakt']"
             :key="item"
             :to="`/${item}`"
             class="text-textprimary hover:text-primary transition-all duration-300 ease-in-out relative group"
@@ -66,7 +66,7 @@ const toggleMenu = () => {
     >
       <nav class="container mx-auto px-4 py-2">
         <NuxtLink
-          v-for="item in ['vores-arbejde', 'om', 'kontakt']"
+          v-for="item in ['om', 'kontakt']"
           :key="item"
           :to="`/${item}`"
           class="block py-3 text-textprimary hover:text-primary transition-all duration-300 ease-in-out border-b border-textsecondary/20 last:border-b-0"

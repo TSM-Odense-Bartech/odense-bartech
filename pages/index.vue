@@ -1,181 +1,173 @@
-<script setup lang="ts">
-import { ref } from "vue";
+<script setup>
+import { ref, onMounted } from "vue";
 
-const features = ref([
-  {
-    title: "Precision Pour Systems",
-    description:
-      "Ensure perfect measurements every time, enhancing efficiency and consistency.",
-    icon: "🍹",
-  },
-  {
-    title: "Smart Inventory Management",
-    description:
-      "Optimize stock levels and reduce costs with our intelligent tracking solutions.",
-    icon: "📊",
-  },
-  {
-    title: "Custom Bar Layouts",
-    description:
-      "Maximize efficiency and improve workflow with tailored bar designs.",
-    icon: "🏗️",
-  },
-  {
-    title: "Comprehensive Training",
-    description:
-      "Expert-led programs ensure you get the most out of our technology.",
-    icon: "🎓",
-  },
-]);
+const isVisible = ref(false);
 
-const testimonials = ref([
-  {
-    name: "John Doe",
-    position: "Bar Owner",
-    content:
-      "Odense Bartech transformed our operations. The precision pour system alone increased our profits by 15%!",
-  },
-  {
-    name: "Jane Smith",
-    position: "Head Bartender",
-    content:
-      "The custom bar layout has made our busy nights so much smoother. I can't imagine working without it now.",
-  },
-]);
+onMounted(() => {
+  setTimeout(() => {
+    isVisible.value = true;
+  }, 100);
+});
 </script>
 
 <template>
-  <div class="min-h-screen bg-tertiary text-textprimary">
-    <header class="bg-gradient-to-r from-primary to-secondary py-24 sm:py-32">
-      <div class="container mx-auto px-4 text-center">
+  <div class="bg-tertiary text-textprimary">
+    <section
+      class="relative max-w-screen-xl mx-auto min-h-screen flex flex-col justify-center items-center px-4 py-16 overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-10 left-10 w-20 h-20 bg-primary opacity-20 rounded-full animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-32 h-32 bg-secondary opacity-10 rounded-full animate-pulse"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute top-1/4 right-1/4 w-16 h-16 bg-primary opacity-15 rounded-full animate-pulse"
+          style="animation-delay: 0.5s"
+        ></div>
+      </div>
+
+      <div class="relative z-10 text-center">
         <h1
-          class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-tertiary"
+          class="text-5xl md:text-7xl font-bold text-primary mb-4 transition-all duration-1000 ease-out"
+          :class="{
+            'opacity-100 translate-y-0': isVisible,
+            'opacity-0 -translate-y-10': !isVisible,
+          }"
         >
           Odense Bartech
         </h1>
-        <p class="text-xl sm:text-2xl md:text-3xl mb-10 text-tertiary">
-          Precision in Every Pour
+        <p
+          class="text-2xl md:text-3xl mb-8 transition-all duration-1000 ease-out delay-300"
+          :class="{
+            'opacity-100 translate-y-0': isVisible,
+            'opacity-0 translate-y-10': !isVisible,
+          }"
+        >
+          PPrecision in every Pour
         </p>
         <NuxtLink
-          to="#contact"
-          class="bg-tertiary text-secondary font-bold py-3 px-8 rounded-full hover:bg-textsecondary transition duration-300 text-lg inline-flex items-center"
+          to="/kontakt"
+          class="bg-primary text-tertiary px-8 py-3 rounded-md hover:bg-secondary transition-all duration-300 ease-in-out text-lg inline-block relative overflow-hidden group"
         >
-          Kom igang her
+          <span class="relative z-10">Kom i gang her!</span>
+          <span
+            class="absolute inset-0 bg-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-in-out"
+          ></span>
         </NuxtLink>
       </div>
-    </header>
 
-    <main>
-      <section class="py-20 sm:py-24">
-        <div class="container mx-auto px-4">
-          <h2
-            class="text-3xl sm:text-4xl font-bold mb-12 text-center text-primary"
-          >
-            Revolutionizing Bar Technology
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div
-              class="bg-tertiary p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
-            >
-              <h3 class="text-2xl font-semibold mb-4 text-primary">
-                Our Expertise
-              </h3>
-              <p class="text-textprimary leading-relaxed">
-                At Odense Bartech, we blend cutting-edge technology with
-                traditional craftsmanship to deliver unparalleled solutions for
-                the modern bar industry. Our innovative systems ensure
-                precision, efficiency, and consistency in every aspect of bar
-                operations, setting new standards in the field.
-              </p>
-            </div>
-            <div
-              class="bg-tertiary p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
-            >
-              <h3 class="text-2xl font-semibold mb-4 text-primary">
-                Why Choose Us
-              </h3>
-              <p class="text-textprimary leading-relaxed">
-                With years of experience and a passion for excellence, we offer
-                tailor-made solutions that address the unique challenges of your
-                bar. Our commitment to quality, innovation, and customer
-                satisfaction sets us apart, ensuring that your bar operates at
-                peak efficiency and delivers exceptional experiences to your
-                patrons.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div
+        class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-tertiary to-transparent"
+      ></div>
+      <div
+        class="absolute top-1/2 left-0 w-40 h-40 bg-primary opacity-5 rounded-full filter blur-3xl animate-blob"
+      ></div>
+      <div
+        class="absolute top-1/2 right-0 w-40 h-40 bg-secondary opacity-5 rounded-full filter blur-3xl animate-blob"
+        style="animation-delay: 2s"
+      ></div>
+    </section>
 
-      <section class="bg-textsecondary py-20 sm:py-24">
-        <div class="container mx-auto px-4">
-          <h2
-            class="text-3xl sm:text-4xl font-bold mb-12 text-center text-primary"
-          >
-            Our Services
+    <section class="max-w-screen-xl mx-auto py-16 px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Revolutionerer teknologien i baren
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div
-              v-for="feature in features"
-              :key="feature.title"
-              class="bg-tertiary p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl hover:transform hover:-translate-y-1"
-            >
-              <div class="text-4xl mb-4">{{ feature.icon }}</div>
-              <h3 class="text-xl font-semibold mb-4 text-primary">
-                {{ feature.title }}
-              </h3>
-              <p class="text-textprimary">{{ feature.description }}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="py-20 sm:py-24">
-        <div class="container mx-auto px-4">
-          <h2
-            class="text-3xl sm:text-4xl font-bold mb-12 text-center text-primary"
-          >
-            What Our Clients Say
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div
-              v-for="testimonial in testimonials"
-              :key="testimonial.name"
-              class="bg-tertiary p-6 rounded-lg shadow-lg"
-            >
-              <p class="text-textprimary italic mb-4">
-                "{{ testimonial.content }}"
-              </p>
-              <div class="font-semibold text-primary">
-                {{ testimonial.name }}
-              </div>
-              <div class="text-sm text-textsecondary">
-                {{ testimonial.position }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="py-20 sm:py-24 bg-gradient-to-r from-primary to-secondary"
-      >
-        <div class="container mx-auto px-4 text-center">
-          <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-tertiary">
-            Ready to Transform Your Bar?
-          </h2>
-          <p class="text-xl text-tertiary mb-10 max-w-2xl mx-auto">
-            Experience the future of bar technology. Let us help you elevate
-            your bar's performance and customer satisfaction.
+          <p class="text-lg">
+            Odense Bartech producerer teknologiske løsninger til barer. Vores
+            innovative systemer er designet til at optimere effektiviteten og
+            præcisionen i din bar.
           </p>
-          <NuxtLink
-            to="/kontakt"
-            class="bg-tertiary text-secondary font-bold py-3 px-8 rounded-full hover:bg-textsecondary transition duration-300 text-lg inline-flex items-center"
-          >
-            Kontakt os her
-          </NuxtLink>
         </div>
-      </section>
-    </main>
+        <div class="md:w-1/2">
+          <img src="#" alt="Bar technology" class="rounded-lg shadow-lg" />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary text-tertiary py-16 px-4">
+      <div class="max-w-screen-xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+          Hvorfor vælge os?
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-tertiary text-textprimary p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-4">Præcision</h3>
+            <p>
+              Bag Odense Bartech er der et hold medarbejdere, der alle stræber
+              efter at udføre deres opgave til præcision. Det eneste vi ønsker
+              er at gøre din bar så effektiv som muligt.
+            </p>
+          </div>
+          <div class="bg-tertiary text-textprimary p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-4">Nem installation</h3>
+            <p>
+              Det skal være nemt og bekvemt for dig at sætte vores system op. Vi
+              sørger for setupet og får dig kørende på ingen tid.
+            </p>
+          </div>
+          <div class="bg-tertiary text-textprimary p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold mb-4">Fleksible priser</h3>
+            <p>Vi tilbyder to forskellige prisbaserede metoder:</p>
+            <ul class="mt-2">
+              <li class="flex justify-between">
+                <span>Leje af systemet</span>
+                <span class="font-bold">2.000 kr/md</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Køb af systemet</span>
+                <span class="font-bold">12.000 kr</span>
+              </li>
+            </ul>
+            <p class="mt-2 text-sm">
+              Alle priser er eksklusive moms (25% pålægges ved privat køb)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary text-tertiary py-16 px-4">
+      <div class="max-w-screen-xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Klar til at optimere din bar?
+        </h2>
+        <p class="text-xl mb-8">
+          Lad os hjælpe dig med at tage din bar til næste niveau
+        </p>
+        <NuxtLink
+          to="/kontakt"
+          class="bg-tertiary text-primary px-8 py-3 rounded-md hover:bg-secondary hover:text-tertiary transition-colors duration-300 ease-in-out text-lg inline-block"
+        >
+          Start her!
+        </NuxtLink>
+      </div>
+    </section>
   </div>
 </template>
+
+<style scoped>
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, 30px) scale(1.05);
+  }
+}
+
+.animate-blob {
+  animation: blob 15s infinite;
+}
+</style>

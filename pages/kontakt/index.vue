@@ -1,30 +1,34 @@
-<script lang="ts" setup></script>
+<script setup lang="ts">
+import AppKontakt from "~/components/AppKontakt.vue";
+</script>
 
 <template>
-  <div class="min-h-screen bg-tertiary">
-    <main class="container mx-auto px-4 py-16">
-      <h1 class="text-4xl font-bold text-primary mb-8">Kontakt Os</h1>
-      <div class="bg-white p-8 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-textprimary mb-4">
-          Get in Touch
-        </h2>
-        <p class="text-textsecondary mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui
-          mauris. Vivamus hendrerit arcu sed erat molestie vehicula.
-        </p>
-        <div class="mb-4">
-          <h3 class="text-lg font-medium text-textprimary">Email</h3>
-          <a
-            href="mailto:ask@odensebartech.com"
-            class="text-primary hover:underline"
-            >ask@odensebartech.com</a
-          >
-        </div>
-        <div>
-          <h3 class="text-lg font-medium text-textprimary">Contact Person</h3>
-          <p class="text-textsecondary">Anton Sonderskov Kristensen</p>
-        </div>
-      </div>
-    </main>
+  <div class="max-w-screen-xl mx-auto py-16 px-4">
+    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
+      Kontakt Os
+    </h1>
+
+    <AppKontakt />
+
+    <div class="text-center">
+      <p class="mb-4">
+        Eventuelt kan du tage kontakt til os på nedenstående
+        kontaktinformationer.
+      </p>
+      <p class="mb-2">
+        Du kan kontakte os på telefon:
+        <a href="tel:+4522334455" class="text-primary hover:underline"
+          >22 33 44 55</a
+        >
+      </p>
+      <p>
+        Eller du kan skrive til os på mail:
+        <a
+          href="mailto:ask@odensebartech.com"
+          class="text-primary hover:underline"
+          >ask@odensebartech.com</a
+        >
+      </p>
+    </div>
   </div>
 </template>

@@ -10,16 +10,15 @@ const today = new Date();
           <h3 class="text-xl font-bold">Odense Bartech</h3>
           <p class="text-sm text-gray-400">Precision in Every Pour</p>
         </div>
-        <div class="w-full md:w-auto text-center md:text-right">
+        <div class="w-full md:w-auto text-center md:text-right space-x-6">
           <NuxtLink
-            to="/vores-arbejde"
-            class="text-gray-400 hover:text-white mx-2"
-            >Vores Arbejde</NuxtLink
-          >
-          <NuxtLink to="/om" class="text-gray-400 hover:text-white mx-2"
+            to="/om"
+            class="text-textprimary hover:text-primary transition-all duration-300 ease-in-out relative group"
             >Om</NuxtLink
           >
-          <NuxtLink to="/kontakt" class="text-gray-400 hover:text-white mx-2"
+          <NuxtLink
+            to="/kontakt"
+            class="text-textprimary hover:text-primary transition-all duration-300 ease-in-out relative group"
             >Kontakt</NuxtLink
           >
         </div>

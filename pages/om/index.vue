@@ -1,34 +1,24 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="min-h-screen bg-tertiary">
-    <main class="container mx-auto px-4 py-16">
-      <h1 class="text-4xl font-bold text-primary mb-8">Om Odense Bartech</h1>
-      <div class="bg-white p-8 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold text-textprimary mb-4">Who We Are</h2>
-        <p class="text-textsecondary mb-6">
-          Odense Bartech is a leading provider of precision bar technology
-          solutions. Founded in [insert year], we have been at the forefront of
-          innovation in the bar industry, combining cutting-edge technology with
-          traditional craftsmanship.
-        </p>
-        <h2 class="text-2xl font-semibold text-textprimary mb-4">
-          Our Mission
-        </h2>
-        <p class="text-textsecondary mb-6">
-          At Odense Bartech, our mission is to revolutionize the bar experience
-          through precision engineering and innovative solutions. We strive to
-          enhance efficiency, quality, and consistency in every pour, enabling
-          our clients to deliver exceptional service to their customers.
-        </p>
-        <h2 class="text-2xl font-semibold text-textprimary mb-4">Our Team</h2>
-        <p class="text-textsecondary">
-          Our team consists of passionate experts in bar technology,
-          engineering, and customer service. Led by our founder, Anton
-          Sonderskov Kristensen, we are committed to pushing the boundaries of
-          what's possible in bar technology.
-        </p>
-      </div>
-    </main>
+  <div
+    class="max-w-screen-xl mx-auto min-h-[80vh] flex flex-col justify-center items-center px-4 py-16 bg-tertiary"
+  >
+    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-8 text-center">
+      Om
+    </h1>
+    <div class="max-w-2xl text-center">
+      <p class="text-lg mb-6 leading-relaxed text-textprimary">
+        Odense Bartech er en virksomhed, placeret i Odense. Vi producerer
+        teknologiske løsninger til barer. Vores innovative systemer er designet
+        til at optimere effektiviteten og præcisionen i din bar.
+      </p>
+
+      <p class="text-lg leading-relaxed text-textprimary">
+        Bag Odense Bartech er der fire engagerede medarbejdere, der alle stræber
+        efter at udføre deres opgave til præcision. Sammen har vi udviklet et
+        system, der gør din bar så effektiv som muligt.
+      </p>
+    </div>
   </div>
 </template>
