@@ -46,7 +46,7 @@ onMounted(() => {
             'opacity-0 translate-y-10': !isVisible,
           }"
         >
-          PPrecision in every Pour
+          Precision in every Pour
         </p>
         <NuxtLink
           to="/kontakt"
