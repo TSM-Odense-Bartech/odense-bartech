@@ -3,44 +3,40 @@ import { ref } from "vue";
 
 const isMenuOpen = ref(false);
 
+const navItems = [
+  { name: "Home", path: "/" },
+  { name: "Products", path: "/products" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
+];
+
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 </script>
 
 <template>
-  <header class="sticky top-0 z-20 shadow-md backdrop-blur-md bg-tertiary/90">
-    <nav class="container mx-auto px-4 py-3">
-      <div class="flex items-center justify-between">
-        <h2 class="text-2xl font-bold">
-          <NuxtLink
-            to="/"
-            class="text-primary hover:text-textprimary transition-all duration-300 ease-in-out"
-            >Odense Bartech</NuxtLink
-          >
-        </h2>
-        <div class="hidden md:flex items-center space-x-6">
-          <NuxtLink
-            v-for="item in ['om', 'kontakt']"
-            :key="item"
-            :to="`/${item}`"
-            class="text-textprimary hover:text-primary transition-all duration-300 ease-in-out relative group"
-          >
-            <span class="relative z-10">
-              {{
-                item === "vores-arbejde"
-                  ? "Vores Arbejde"
-                  : item.charAt(0).toUpperCase() + item.slice(1)
-              }}
-            </span>
-            <span
-              class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-in-out group-hover:w-full"
-            ></span>
-          </NuxtLink>
+  <nav class="relative bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div>
+          <h1 class="text-2xl font-bold text-secondary">Odense Bartech</h1>
+        </div>
+        <div class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li v-for="item in navItems" :key="item.name">
+              <NuxtLink
+                :to="item.path"
+                class="text-secondary hover:text-primary transition-colors duration-200"
+              >
+                {{ item.name }}
+              </NuxtLink>
+            </li>
+          </ul>
         </div>
         <button
           @click="toggleMenu"
-          class="md:hidden focus:outline-none text-textprimary hover:text-primary transition-colors duration-300"
+          class="md:hidden text-secondary focus:outline-none"
           aria-label="Toggle menu"
         >
           <svg
@@ -48,7 +44,7 @@ const toggleMenu = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            class="w-6 h-6"
+            class="h-6 w-6"
           >
             <path
               stroke-linecap="round"
@@ -59,26 +55,19 @@ const toggleMenu = () => {
           </svg>
         </button>
       </div>
-    </nav>
-    <div
-      v-if="isMenuOpen"
-      class="md:hidden shadow-lg bg-tertiary/95 absolute w-full left-0 top-full"
-    >
-      <nav class="container mx-auto px-4 py-2">
+    </div>
+    <div v-show="isMenuOpen" class="md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <NuxtLink
-          v-for="item in ['om', 'kontakt']"
-          :key="item"
-          :to="`/${item}`"
-          class="block py-3 text-textprimary hover:text-primary transition-all duration-300 ease-in-out border-b border-textsecondary/20 last:border-b-0"
+          v-for="item in navItems"
+          :key="item.name"
+          :to="item.path"
+          class="block px-3 py-2 text-base font-medium text-secondary hover:text-primary transition-colors duration-200"
           @click="isMenuOpen = false"
         >
-          {{
-            item === "vores-arbejde"
-              ? "Vores Arbejde"
-              : item.charAt(0).toUpperCase() + item.slice(1)
-          }}
+          {{ item.name }}
         </NuxtLink>
-      </nav>
+      </div>
     </div>
-  </header>
+  </nav>
 </template>

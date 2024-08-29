@@ -11,10 +11,7 @@ export default {
   theme: {
     colors: {
       primary: "#21C9AB",
-      secondary: "#000000",
-      tertiary: "#fafafa",
-      textprimary: "#333",
-      textsecondary: "#a3a3a3",
+      secondary: "#595959",
     },
   },
   plugins: [],
