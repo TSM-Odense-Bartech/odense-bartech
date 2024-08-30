@@ -31,15 +31,19 @@ const footerItems = [
 
 <template>
   <footer class="">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="max-w-7xl mx-auto px-4 py-8">
       <div class="md:flex sm:flex-row md:justify-between">
         <div class="mb-8 md:mb-0">
           <h2 class="text-2xl font-bold text-secondary">Odense Bartech</h2>
         </div>
         <div class="md:flex sm:flex-row gap-6">
-          <div v-for="(column, index) in footerItems.slice(1)" :key="index">
+          <div
+            v-for="(column, index) in footerItems.slice(1)"
+            :key="index"
+            class="mb-6"
+          >
             <h3
-              class="text-sm font-semibold text-secondary uppercase tracking-wider mb-4"
+              class="text-sm font-semibold text-secondary uppercase tracking-wider mb-2"
             >
               {{ column.title }}
             </h3>

@@ -16,8 +16,8 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <nav class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <nav class="shadow-sm">
+    <div class="max-w-7xl mx-auto px-4">
       <div class="flex justify-between items-center py-4">
         <div>
           <h1 class="text-2xl font-bold text-secondary">Odense Bartech</h1>
