@@ -30,49 +30,47 @@ const footerItems = [
 </script>
 
 <template>
-  <footer class="">
-    <div class="max-w-7xl mx-auto px-4 py-8">
-      <div class="md:flex sm:flex-row md:justify-between">
-        <div class="mb-8 md:mb-0">
-          <h2 class="text-2xl font-bold text-secondary">Odense Bartech</h2>
-        </div>
-        <div class="md:flex sm:flex-row gap-6">
-          <div
-            v-for="(column, index) in footerItems.slice(1)"
-            :key="index"
-            class="mb-6"
+  <footer class="container mx-auto px-4 py-8">
+    <div class="md:flex sm:flex-row md:justify-between">
+      <div class="mb-8 md:mb-0">
+        <h2 class="text-2xl font-bold text-secondary">Odense Bartech</h2>
+      </div>
+      <div class="md:flex sm:flex-row gap-6">
+        <div
+          v-for="(column, index) in footerItems.slice(1)"
+          :key="index"
+          class="mb-6"
+        >
+          <h3
+            class="text-sm font-semibold text-secondary uppercase tracking-wider mb-2"
           >
-            <h3
-              class="text-sm font-semibold text-secondary uppercase tracking-wider mb-2"
-            >
-              {{ column.title }}
-            </h3>
-            <ul class="space-y-2">
-              <li v-for="(item, itemIndex) in column.items" :key="itemIndex">
-                <span
-                  v-if="typeof item === 'string'"
-                  class="text-secondary hover:text-primary transition-colors duration-200"
-                >
-                  {{ item }}
-                </span>
-                <a
-                  v-else
-                  :href="item.path"
-                  class="text-secondary hover:text-primary transition-colors duration-200"
-                >
-                  {{ item.name }}
-                </a>
-              </li>
-            </ul>
-          </div>
+            {{ column.title }}
+          </h3>
+          <ul class="space-y-2">
+            <li v-for="(item, itemIndex) in column.items" :key="itemIndex">
+              <span
+                v-if="typeof item === 'string'"
+                class="text-secondary hover:text-primary transition-colors duration-200"
+              >
+                {{ item }}
+              </span>
+              <a
+                v-else
+                :href="item.path"
+                class="text-secondary hover:text-primary transition-colors duration-200"
+              >
+                {{ item.name }}
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="mt-8 pt-8 border-t border-secondary">
-        <p class="text-base text-secondary text-center">
-          © {{ new Date().getFullYear() }} Odense Bartech. All rights reserved.
-        </p>
-      </div>
+    <div class="mt-8 pt-8 border-t-2 border-primary">
+      <p class="text-base text-secondary text-center">
+        © {{ new Date().getFullYear() }} Odense Bartech. All rights reserved.
+      </p>
     </div>
   </footer>
 </template>
