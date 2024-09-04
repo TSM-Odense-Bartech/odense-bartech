@@ -16,7 +16,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <nav class="container mx-auto border-b-2 border-primary px-4 py-8">
+  <nav class="container mx-auto border-b-2 border-primary px-4 py-4">
     <div class="flex justify-between items-center py-4">
       <div>
         <h1 class="text-2xl font-bold text-secondary">Odense Bartech</h1>
@@ -55,12 +55,12 @@ const toggleMenu = () => {
       </button>
     </div>
     <div v-show="isMenuOpen" class="md:hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <div class="space-y-1">
         <NuxtLink
           v-for="item in navItems"
           :key="item.name"
           :to="item.path"
-          class="block px-3 py-2 text-base font-medium text-secondary hover:text-primary transition-colors duration-200"
+          class="block py-2 text-base font-medium text-secondary hover:text-primary transition-colors duration-200"
           @click="isMenuOpen = false"
         >
           {{ item.name }}

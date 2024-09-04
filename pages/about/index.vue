@@ -20,7 +20,11 @@
           that are changing the way cocktails are being made.
         </p>
       </div>
-      <img src="" alt="Founders Standing Side by Side" class="md:w-1/2" />
+      <img
+        src=""
+        alt="Founders Standing Side by Side"
+        class="md:w-1/2 min-h-[50vh] bg-secondary"
+      />
     </div>
     <div class="border-primary border-b-4 pt-12 pb-32">
       <h2 class="text-2xl font-bold text-secondary mb-6">Our Philosophy</h2>

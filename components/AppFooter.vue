@@ -30,11 +30,9 @@ const footerItems = [
 </script>
 
 <template>
-  <footer class="container mx-auto px-4 py-8">
+  <footer class="container mx-auto px-4 py-4">
     <div class="md:flex sm:flex-row md:justify-between">
-      <div class="mb-8 md:mb-0">
-        <h2 class="text-2xl font-bold text-secondary">Odense Bartech</h2>
-      </div>
+      <h2 class="text-2xl font-bold text-secondary mb-6">Odense Bartech</h2>
       <div class="md:flex sm:flex-row gap-6">
         <div
           v-for="(column, index) in footerItems.slice(1)"
@@ -67,7 +65,7 @@ const footerItems = [
       </div>
     </div>
 
-    <div class="mt-8 pt-8 border-t-2 border-primary">
+    <div class="mt-8 pt-6 border-t-2 border-primary">
       <p class="text-base text-secondary text-center">
         © {{ new Date().getFullYear() }} Odense Bartech. All rights reserved.
       </p>
