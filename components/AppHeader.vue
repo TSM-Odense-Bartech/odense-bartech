@@ -1,87 +1,101 @@
 <template>
-  <nav class="bg-white shadow-md border-b-4 border-primary">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <!-- Logo Section -->
-      <div class="flex items-center space-x-2">
-        <NuxtLink to="/">
-          <img
-            src="/header-logo.svg"
-            alt="Odense Bartech Logo"
-            style="height: 20px"
-          />
-        </NuxtLink>
-      </div>
-
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex space-x-8 items-center">
-        <ul class="flex space-x-6">
-          <li v-for="item in navItems" :key="item.name">
-            <NuxtLink
-              :to="item.path"
-              class="text-lg text-secondary hover:text-primary transition-colors duration-300"
-            >
-              {{ item.name }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button
-        @click="toggleMenu"
-        class="md:hidden text-secondary focus:outline-none"
-        aria-label="Toggle menu"
+  <div class="bg-white relative isolate px-6 pt-14 lg:px-8 overflow-hidden">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav
+        class="flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          class="h-8 w-8"
+        <div class="flex lg:flex-1">
+          <a href="/" class="-m-1.5 p-1.5">
+            <span class="sr-only">Odense Bartech</span>
+            <!-- Your Company Logo -->
+            <img
+              class="h-[20px] w-auto"
+              src="/header-logo-b.svg"
+              alt="Odense Bartech Logo"
+            />
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-black"
+            @click="mobileMenuOpen = true"
+          >
+            <span class="sr-only">Open main menu</span>
+            <Bars3Icon class="h-6 w-6 text-black" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a
+            v-for="item in navigation"
+            :key="item.name"
+            :href="item.href"
+            class="text-sm font-semibold leading-6 text-black"
+          >
+            {{ item.name }}
+          </a>
+        </div>
+      </nav>
+      <Dialog
+        class="lg:hidden"
+        @close="mobileMenuOpen = false"
+        :open="mobileMenuOpen"
+      >
+        <div class="fixed inset-0 z-50" />
+        <DialogPanel
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          ></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div
-      v-show="isMenuOpen"
-      class="md:hidden bg-white shadow-lg transition-transform duration-300 ease-out transform"
-    >
-      <div class="container mx-auto px-6 py-4 space-y-2">
-        <NuxtLink
-          v-for="item in navItems"
-          :key="item.name"
-          :to="item.path"
-          class="block py-2 text-base font-medium text-secondary hover:text-primary transition-colors duration-300"
-          @click="isMenuOpen = false"
-        >
-          {{ item.name }}
-        </NuxtLink>
-      </div>
-    </div>
-  </nav>
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Odense Bartech</span>
+              <img
+                class="h-8 w-auto"
+                src="/header-logo.svg"
+                alt="Odense Bartech Logo"
+              />
+            </a>
+            <button
+              type="button"
+              class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              @click="mobileMenuOpen = false"
+            >
+              <span class="sr-only">Close menu</span>
+              <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a
+                  v-for="item in navigation"
+                  :key="item.name"
+                  :href="item.href"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
+                >
+                  {{ item.name }}
+                </a>
+              </div>
+              <div class="py-6"></div>
+            </div>
+          </div>
+        </DialogPanel>
+      </Dialog>
+    </header>
+  </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from "vue";
+import { Dialog, DialogPanel } from "@headlessui/vue";
+import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
-const isMenuOpen = ref(false);
-
-const navItems = [
-  { name: "Home", path: "/" },
-  { name: "Products", path: "/products" },
-  { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
+const navigation = [
+  { name: "Products", href: "/products" },
+  { name: "About Us", href: "/about" },
+  { name: "Releases", href: "/releases" },
+  { name: "Contact", href: "/contact" },
 ];
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
+const mobileMenuOpen = ref(false);
 </script>

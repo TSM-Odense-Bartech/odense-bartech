@@ -1,49 +1,60 @@
+import AppHeader from "@/components/AppHeader";
+
 <script setup lang="ts"></script>
 
 <template>
+  <AppHeader />
   <div class="container mx-auto px-4 py-8">
+    <!-- Main Heading -->
     <h1
-      class="border-primary border-b-2 inline-block text-2xl font-bold text-secondary mb-8"
+      class="border-primary border-b-2 inline-block text-2xl font-bold text-secondary mb-6"
     >
       About Us
     </h1>
+
+    <!-- Who Are We Section -->
     <div
-      class="flex flex-col md:flex-row gap-8 items-center justify-center border-primary border-b-4 pt-12 pb-32 mb-12"
+      class="flex flex-col md:flex-row gap-6 items-start justify-between border-primary border-b-4 py-8"
     >
       <div class="md:w-1/2 space-y-4">
-        <h2 class="text-2xl font-bold text-secondary">Who are we?</h2>
-        <p class="text-secondary text-lg">
-          At Odense Bartech, we are not just creating a product - we are
-          pioneering a revolution in the bartending industry. We are a team from
-          Odense, Denmark, that are dedicated to solving problems in the
-          beverage industry. Our passion is channeled into creating the products
-          that are changing the way cocktails are being made.
+        <h2 class="text-xl font-semibold text-secondary">Who Are We?</h2>
+        <p class="text-secondary text-base leading-relaxed">
+          At Odense Bartech, we are innovators committed to redefining the
+          bartending experience. Based in Odense, Denmark, our team is driven by
+          a passion for solving the challenges of the beverage industry. Our
+          innovative products are designed to empower bartenders, optimize
+          service, and enhance customer experiences.
+        </p>
+        <p class="text-secondary text-base leading-relaxed">
+          We believe in creating products that not only perform but excel in
+          every setting. With precision and reliability at the core, our
+          solutions are setting new standards for bars around the world.
         </p>
       </div>
       <img
         src=""
-        alt="Founders Standing Side by Side"
-        class="md:w-1/2 min-h-[50vh] bg-secondary"
+        alt="Founders of Odense Bartech"
+        class="md:w-1/3 w-full rounded-lg shadow-lg object-cover"
       />
     </div>
-    <div class="border-primary border-b-4 pt-12 pb-32">
-      <h2 class="text-2xl font-bold text-secondary mb-6">Our Philosophy</h2>
-      <div class="flex flex-col md:flex-row gap-8">
-        <p class="text-secondary text-lg md:w-1/2">
-          We know how stressful working behind a bar can be, especially in busy
-          times. So, we have set ourselves on a mission to develop a solution
-          that will help bartenders serve cocktails quickly and efficiently.
-          With our products, bartenders can focus on what they are best at -
-          creating a fantastic atmosphere and giving the customers a unique
-          experience, while we take care of the rest.
+
+    <!-- Our Philosophy Section -->
+    <div class="py-8">
+      <h2 class="text-xl font-semibold text-secondary mb-4">Our Philosophy</h2>
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <p class="text-secondary text-base leading-relaxed md:w-1/2">
+          We understand the fast-paced environment of bars and the importance of
+          efficiency without sacrificing quality. Our mission is to develop
+          solutions that help bartenders deliver exceptional service quickly. By
+          automating precise pouring, our technology allows bartenders to focus
+          on creating memorable experiences for their customers.
         </p>
-        <p class="text-secondary text-lg md:w-1/2">
-          Our unique products sets a new standard. Through technology, we ensure
-          that every serving is carried out with unparalleled precision and
-          consistency. The result? A flawless cocktail every time. Our products
-          will forever change your bar and allow you to experience unrealized
-          potential with a fast return on investment. At Odense Bartech, we
-          believe in one thing; precision in every pour.
+        <p class="text-secondary text-base leading-relaxed md:w-1/2">
+          Through our advanced technology, we provide unmatched consistency in
+          every pour. This means every cocktail served is perfect, every time.
+          With Odense Bartech, you get a product that will revolutionize your
+          bar operations and offer a swift return on investment, all while
+          maintaining the craft and charm that define the best bars.
         </p>
       </div>
     </div>

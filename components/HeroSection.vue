@@ -125,10 +125,10 @@ import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 const navigation = [
-  { name: "Products", href: "#" },
-  { name: "About Us", href: "#" },
-  { name: "Releases", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Products", href: "/products" },
+  { name: "About Us", href: "/about" },
+  { name: "Releases", href: "/releases" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const mobileMenuOpen = ref(false);
