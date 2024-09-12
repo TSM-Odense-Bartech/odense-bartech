@@ -10,6 +10,7 @@ export default {
   ],
   theme: {
     colors: {
+      white: "#fff",
       primary: "#21C9AB",
       secondary: "#595959",
     },
