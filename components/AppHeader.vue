@@ -1,88 +1,75 @@
 <template>
-  <div class="bg-white relative isolate px-6 pt-14 lg:px-8 overflow-hidden">
-    <header class="absolute inset-x-0 top-0 z-50">
-      <nav
-        class="flex items-center justify-between p-6 lg:px-8"
-        aria-label="Global"
-      >
-        <div class="flex lg:flex-1">
-          <a href="/" class="-m-1.5 p-1.5">
-            <span class="sr-only">Odense Bartech</span>
-            <!-- Your Company Logo -->
-            <img
-              class="h-[20px] w-auto"
-              src="/header-logo-b.svg"
-              alt="Odense Bartech Logo"
-            />
-          </a>
-        </div>
-        <div class="flex lg:hidden">
-          <button
-            type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-black"
-            @click="mobileMenuOpen = true"
+  <nav class="top-0 left-0 w-full z-50 bg-transparent px-4 md:px-10 mb-[44px]">
+    <div class="max-w-6xl mx-auto flex items-center justify-between h-16 px-4">
+      <a href="/">
+        <img src="/public/header-logo-b.svg" alt="Logo" class="h-6" />
+      </a>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center space-x-6">
+        <li>
+          <a href="/mk1-release" class="text-black hover:text-primary"
+            >MK1 Release</a
           >
-            <span class="sr-only">Open main menu</span>
-            <Bars3Icon class="h-6 w-6 text-black" aria-hidden="true" />
-          </button>
-        </div>
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a
-            v-for="item in navigation"
-            :key="item.name"
-            :href="item.href"
-            class="text-sm font-semibold leading-6 text-black"
-          >
-            {{ item.name }}
-          </a>
-        </div>
-      </nav>
-      <Dialog
-        class="lg:hidden"
-        @close="mobileMenuOpen = false"
-        :open="mobileMenuOpen"
+        </li>
+        <div class="w-px h-5 bg-black"></div>
+        <li>
+          <a href="/about" class="text-black hover:text-primary">About Us</a>
+        </li>
+        <div class="w-px h-5 bg-black"></div>
+        <li>
+          <a href="/contact" class="text-black hover:text-primart">Contact</a>
+        </li>
+      </ul>
+      <!-- Mobile Menu Button -->
+      <button
+        @click="isOpen = !isOpen"
+        class="md:hidden focus:outline-none pl-10"
       >
-        <div class="fixed inset-0 z-50" />
-        <DialogPanel
-          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        <svg
+          v-if="!isOpen"
+          class="h-6 w-6 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Odense Bartech</span>
-              <img
-                class="h-8 w-auto"
-                src="/header-logo.svg"
-                alt="Odense Bartech Logo"
-              />
-            </a>
-            <button
-              type="button"
-              class="-m-2.5 rounded-md p-2.5 text-gray-700"
-              @click="mobileMenuOpen = false"
-            >
-              <span class="sr-only">Close menu</span>
-              <XMarkIcon class="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <a
-                  v-for="item in navigation"
-                  :key="item.name"
-                  :href="item.href"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
-                >
-                  {{ item.name }}
-                </a>
-              </div>
-              <div class="py-6"></div>
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
-    </header>
-  </div>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+        <svg
+          v-else
+          class="h-6 w-6 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div v-if="isOpen" class="md:hidden bg-black">
+      <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
+        >MK1 Release</a
+      >
+      <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
+        >About Us</a
+      >
+      <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
+        >Contact</a
+      >
+    </div>
+  </nav>
 </template>
 
 <script setup>

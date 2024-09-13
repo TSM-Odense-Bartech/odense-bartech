@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Navigation -->
-    <nav class="absolute top-0 left-0 w-full z-50 bg-transparent px-10">
+    <nav class="absolute top-0 left-0 w-full z-50 bg-transparent px-4 md:px-10">
       <div
         class="max-w-6xl mx-auto flex items-center justify-between h-16 px-4"
       >
@@ -9,15 +9,17 @@
         <!-- Desktop Menu -->
         <ul class="hidden md:flex items-center space-x-6">
           <li>
-            <a href="#" class="text-white hover:text-primary">MK1 Release</a>
+            <a href="/mk1-release" class="text-white hover:text-primary"
+              >MK1 Release</a
+            >
           </li>
           <div class="w-px h-5 bg-white"></div>
           <li>
-            <a href="#" class="text-white hover:text-primary">About Us</a>
+            <a href="/about" class="text-white hover:text-primary">About Us</a>
           </li>
           <div class="w-px h-5 bg-white"></div>
           <li>
-            <a href="#" class="text-white hover:text-primart">Contact</a>
+            <a href="/contact" class="text-white hover:text-primart">Contact</a>
           </li>
         </ul>
         <!-- Mobile Menu Button -->
