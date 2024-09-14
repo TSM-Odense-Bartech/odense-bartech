@@ -21,6 +21,10 @@ export default {
         <!-- Desktop Menu -->
         <ul class="hidden md:flex items-center space-x-6">
           <li>
+            <a href="/" class="text-white hover:text-primary">Home</a>
+          </li>
+          <div class="w-px h-5 bg-white"></div>
+          <li>
             <a href="/about" class="text-white hover:text-primary">About Us</a>
           </li>
           <div class="w-px h-5 bg-white"></div>
@@ -70,6 +74,9 @@ export default {
         v-if="isOpen"
         class="flex flex-col gap-2 md:hidden bg-white border border-s border-2 border-slate-300 rounded-lg py-2 shadow-xl absolute w-[calc(100vw-40px)] top-[100px] left-[50%] translate-x-[-50%]"
       >
+        <a href="/" class="block px-4 py-2 text-black hover:bg-gray-700"
+          >Home</a
+        >
         <a href="/about" class="block px-4 py-2 text-black hover:bg-gray-700"
           >About Us</a
         >
