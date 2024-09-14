@@ -61,13 +61,15 @@
       </div>
       <!-- Mobile Menu -->
       <div v-if="isOpen" class="md:hidden bg-black">
-        <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
+        <a
+          href="mk1-release"
+          class="block px-4 py-2 text-white hover:bg-gray-700"
           >MK1 Release</a
         >
-        <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
+        <a href="/about" class="block px-4 py-2 text-white hover:bg-gray-700"
           >About Us</a
         >
-        <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
+        <a href="/contact" class="block px-4 py-2 text-white hover:bg-gray-700"
           >Contact</a
         >
       </div>
