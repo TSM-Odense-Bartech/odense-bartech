@@ -1,3 +1,15 @@
+<script>
+import AppFooter from "@/components/AppFooter";
+
+export default {
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+};
+</script>
+
 <template>
   <div>
     <!-- Navigation -->
@@ -9,17 +21,11 @@
         <!-- Desktop Menu -->
         <ul class="hidden md:flex items-center space-x-6">
           <li>
-            <a href="/mk1-release" class="text-white hover:text-primary"
-              >MK1 Release</a
-            >
-          </li>
-          <div class="w-px h-5 bg-white"></div>
-          <li>
             <a href="/about" class="text-white hover:text-primary">About Us</a>
           </li>
           <div class="w-px h-5 bg-white"></div>
           <li>
-            <a href="/contact" class="text-white hover:text-primart">Contact</a>
+            <a href="/contact" class="text-white hover:text-primary">Contact</a>
           </li>
         </ul>
         <!-- Mobile Menu Button -->
@@ -60,16 +66,14 @@
         </button>
       </div>
       <!-- Mobile Menu -->
-      <div v-if="isOpen" class="md:hidden bg-black">
-        <a
-          href="mk1-release"
-          class="block px-4 py-2 text-white hover:bg-gray-700"
-          >MK1 Release</a
-        >
-        <a href="/about" class="block px-4 py-2 text-white hover:bg-gray-700"
+      <div
+        v-if="isOpen"
+        class="flex flex-col gap-2 md:hidden bg-white border border-s border-2 border-slate-300 rounded-lg py-2 shadow-xl absolute w-[calc(100vw-40px)] top-[100px] left-[50%] translate-x-[-50%]"
+      >
+        <a href="/about" class="block px-4 py-2 text-black hover:bg-gray-700"
           >About Us</a
         >
-        <a href="/contact" class="block px-4 py-2 text-white hover:bg-gray-700"
+        <a href="/contact" class="block px-4 py-2 text-black hover:bg-gray-700"
           >Contact</a
         >
       </div>
@@ -88,24 +92,27 @@
       "
     >
       <div class="flex flex-col items-center gap-4">
-        <h1 class="text-white font-bold text-5xl md:text-6xl">
+        <h1 class="text-white font-bold text-4xl md:text-6xl">
           Odense Bartech
         </h1>
-        <h2 class="text-white font-normal text-2xl md:text-3xl">
+        <h2 class="text-white font-normal text-2xl md:text-2xl">
           Precision in every Pour
         </h2>
         <div class="flex gap-4 mt-4">
-          <button
-            class="px-4 py-2 bg-primary text-white rounded-md font-medium focus:outline-none hover:bg-primary"
+          <a
+            href="/contact"
+            class="px-4 py-2 bg-primary text-white rounded-md font-medium hover:bg-primary-dark transition ease-in-out focus:outline-none"
           >
-            Get a Quote
-          </button>
-          <button
+            Contact Us
+          </a>
+          <a
+            href="/about"
             class="px-4 py-2 bg-transparent text-white rounded-md font-medium flex items-center gap-2 focus:outline-none hover:text-primary"
           >
             Explore Us
             <img src="/public/image.png" alt="Explore" class="h-4" />
-          </button>
+          </a
+          href="/">
         </div>
       </div>
     </main>
@@ -119,7 +126,7 @@
         class="w-[100vw] bg-primary flex flex-col items-center justify-center gap-2 py-10"
       >
         <h4 class="text-white text-2xl font-bold">MK1 Releases in</h4>
-        <h3 class="text-white text-5xl font-bold">March 2025</h3>
+        <h3 class="text-white text-4xl md:text-5xl font-bold">March 2025</h3>
       </div>
 
       <!-- Separator -->
@@ -167,7 +174,7 @@
       </section>
 
       <!-- Divider -->
-      <div class="w-full h-1 bg-primary"></div>
+      <div class="w-full h-1 bg-primary my-[68px]"></div>
 
       <!-- Stats Section -->
       <section class="flex flex-col items-center gap-10">
@@ -198,18 +205,11 @@
         </div>
       </section>
     </div>
+
+    <!-- Footer -->
+    <AppFooter />
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      isOpen: false,
-    };
-  },
-};
-</script>
 
 <style>
 /* Additional custom styles if needed */

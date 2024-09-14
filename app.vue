@@ -1,6 +1,6 @@
 <template>
   <div class="bg-tertiary">
-    <NuxtPage />
+    <NuxtPage class="min-h-screen flex flex-col justify-between" />
   </div>
 </template>
  

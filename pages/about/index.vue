@@ -4,16 +4,14 @@ import AppFooter from "@/components/AppFooter";
 </script>
 
 <template>
-  <div>
+  <div class="bg-gray-50 flex flex-col">
     <!-- Header -->
     <AppHeader />
 
     <!-- Main Container -->
     <div class="w-full max-w-[1100px] mx-auto px-4 py-8">
       <!-- Main Heading -->
-      <h1
-        class="text-4xl font-bold text-primary border-b-2 border-primary mb-8"
-      >
+      <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center pb-10">
         About Us
       </h1>
 
@@ -58,7 +56,8 @@ import AppFooter from "@/components/AppFooter";
             of efficiency without sacrificing quality. Our mission is to develop
             solutions that help bartenders deliver exceptional service quickly.
             By automating precise pouring, our technology allows bartenders to
-            focus on creating memorable experiences for their customers.
+            focus on creating memorable experiences for their customers. At
+            Odense Bartech, we believe in one thing; Precision in every pour.
           </p>
           <p class="text-base leading-relaxed text-gray-700 md:w-1/2">
             Through our advanced technology, we provide unmatched consistency in
@@ -72,6 +71,8 @@ import AppFooter from "@/components/AppFooter";
     </div>
 
     <!-- Footer -->
+
+    <AppFooter />
   </div>
 </template>
 

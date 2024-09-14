@@ -7,27 +7,21 @@
       <!-- Desktop Menu -->
       <ul class="hidden md:flex items-center space-x-6">
         <li>
-          <a href="/mk1-release" class="text-black hover:text-primary"
-            >MK1 Release</a
-          >
-        </li>
-        <div class="w-px h-5 bg-black"></div>
-        <li>
           <a href="/about" class="text-black hover:text-primary">About Us</a>
         </li>
         <div class="w-px h-5 bg-black"></div>
         <li>
-          <a href="/contact" class="text-black hover:text-primart">Contact</a>
+          <a href="/contact" class="text-black hover:text-primary">Contact</a>
         </li>
       </ul>
-      <!-- Mobile Menu Button -->
+      <!-- Navigation -->
       <button
         @click="isOpen = !isOpen"
         class="md:hidden focus:outline-none pl-10"
       >
         <svg
           v-if="!isOpen"
-          class="h-6 w-6 text-white"
+          class="h-6 w-6 text-black"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -42,7 +36,7 @@
         </svg>
         <svg
           v-else
-          class="h-6 w-6 text-white"
+          class="h-6 w-6 text-black"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -58,14 +52,14 @@
       </button>
     </div>
     <!-- Mobile Menu -->
-    <div v-if="isOpen" class="md:hidden bg-black">
-      <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
-        >MK1 Release</a
-      >
-      <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
+    <div
+      v-if="isOpen"
+      class="flex flex-col gap-2 md:hidden bg-white border border-s border-2 border-slate-300 rounded-lg py-2 shadow-xl absolute w-[calc(100vw-40px)] top-[100px] left-[50%] translate-x-[-50%]"
+    >
+      <a href="/about" class="block px-4 py-2 text-black hover:bg-slate-700"
         >About Us</a
       >
-      <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700"
+      <a href="/contact" class="block px-4 py-2 text-black hover:bg-slate-700"
         >Contact</a
       >
     </div>
@@ -85,4 +79,14 @@ const navigation = [
 ];
 
 const mobileMenuOpen = ref(false);
+</script>
+
+<script>
+export default {
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+};
 </script>

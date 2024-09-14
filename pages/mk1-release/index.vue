@@ -4,10 +4,10 @@ import AppFooter from "@/components/AppFooter";
 </script>
 
 <template>
-  <div>
+  <div class="bg-gray-50 min-h-screen flex flex-col">
     <!-- Header -->
     <AppHeader />
-
+    <AppFooter />
     <!-- Footer -->
   </div>
 </template>
