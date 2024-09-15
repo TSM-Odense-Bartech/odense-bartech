@@ -8,8 +8,8 @@
         <h2 class="text-xl font-bold text-gray-900 mb-4">Odense Bartech</h2>
         <ul class="text-gray-700 space-y-2">
           <li>Odense Bartech</li>
-          <li>Edisonsvej 30, st. 3,</li>
-          <li>5000 Odense C, Denmark</li>
+          <li>Rosenørnsvej 16</li>
+          <li>5230 Odense M, Denmark</li>
         </ul>
       </div>
 
