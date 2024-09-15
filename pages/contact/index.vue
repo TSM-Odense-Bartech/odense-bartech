@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AppHeader from "@/components/AppHeader";
-import AppFooter from "@/components/AppFooter";
+import AppHeader from "@/components/AppHeader.vue";
+import AppFooter from "@/components/AppFooter.vue";
 import { EnvelopeIcon, ClockIcon } from "@heroicons/vue/24/solid";
 </script>
 
@@ -44,7 +44,7 @@ import { EnvelopeIcon, ClockIcon } from "@heroicons/vue/24/solid";
               <li>
                 <div class="flex items-center">
                   <img
-                    src="/theodor.png"
+                    src="/Theodor.png"
                     alt="Theodor"
                     class="h-24 w-24 rounded-full mr-4"
                   />
