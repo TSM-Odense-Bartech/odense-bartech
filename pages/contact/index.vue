@@ -44,7 +44,7 @@ import { EnvelopeIcon, ClockIcon } from "@heroicons/vue/24/solid";
               <li>
                 <div class="flex items-center">
                   <img
-                    src="/Theodor.png"
+                    src="/theodor.png"
                     alt="Theodor"
                     class="h-24 w-24 rounded-full mr-4"
                   />
@@ -68,7 +68,7 @@ import { EnvelopeIcon, ClockIcon } from "@heroicons/vue/24/solid";
               <li>
                 <div class="flex items-center">
                   <img
-                    src="https://via.placeholder.com/48"
+                    src="/emil.png"
                     alt="Emil"
                     class="h-24 w-24 rounded-full mr-4"
                   />
